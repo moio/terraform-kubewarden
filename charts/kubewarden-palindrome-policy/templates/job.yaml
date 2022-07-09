@@ -1,0 +1,14 @@
+apiVersion: policies.kubewarden.io/v1alpha2
+kind: ClusterAdmissionPolicy
+metadata:
+  name: palindrome-label-key-pods
+spec:
+  module: registry://ghcr.io/ghcr.io/moio/kubewarden-policies/kubewarden-palindrome-policy:v0.0.1
+  rules:
+  - apiGroups: [""]
+    apiVersions: ["v1"]
+    resources: ["pods"]
+    operations:
+    - CREATE
+    - UPDATE
+  mutating: false

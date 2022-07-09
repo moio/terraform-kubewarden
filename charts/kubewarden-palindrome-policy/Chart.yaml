@@ -1,0 +1,6 @@
+apiVersion: v2
+name: kubewarden-palindrome-policy
+description: Installs a Kubewarden policy to reject pods with palindrome label keys
+type: application
+version: 0.0.1
+appVersion: "0.0.1"
