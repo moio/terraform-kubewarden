@@ -31,12 +31,8 @@ resource "k3d_cluster" "test" {
   }
 }
 
-output "test_credentials" {
+output "credentials" {
   value = {
-    internal_host = "k3d-test-server-0"
-    internal_port = 6443
-    external_host = "rancher.local.gd"
-    external_port = 6443
     kubeconfig_host = k3d_cluster.test.credentials.0.host
     client_certificate = k3d_cluster.test.credentials.0.client_certificate
     client_key = k3d_cluster.test.credentials.0.client_key
